@@ -21,8 +21,6 @@ public class Company {
 
     private String address;
 
-    private String contactEmail;
-
     @Embedded
     private Contact contact;
 }
