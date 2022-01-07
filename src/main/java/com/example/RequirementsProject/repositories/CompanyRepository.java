@@ -7,10 +7,13 @@ import java.util.List;
 
 public interface CompanyRepository extends JpaRepository<Company, Long> {
 
+    Company update(
+        Company company);
+
     List<Company> findByTitle(
-            String title);
+        String title);
 
     List<Company> findByAddress(
-            String address);
+        String address);
 
 }

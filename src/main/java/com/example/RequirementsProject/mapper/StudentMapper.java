@@ -10,11 +10,11 @@ import java.util.List;
 public interface StudentMapper {
 
 
-    Student studentToStudentsDTO(StudentDto studentDto);
+    Student studentDTOToStudent(StudentDto studentDto);
 
-    StudentDto studentDTOToStudents(Student student);
+    StudentDto studentToStudentDTO(Student student);
 
-    List<Student> studentsToStudentsDTOs(List<StudentDto> studentDtos);
+    List<Student> studentsDTOsToStudents(List<StudentDto> studentDtos);
 
-    List<StudentDto> studentsDTOsToStudents(List<Student> students);
+    List<StudentDto> studentsToStudentsDTOs(List<Student> students);
 }

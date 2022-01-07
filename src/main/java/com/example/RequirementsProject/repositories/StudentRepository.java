@@ -7,10 +7,13 @@ import java.util.List;
 
 public interface StudentRepository extends JpaRepository<Student, Long> {
 
-    List<Student> findByName(
-            String name);
+    Student update(
+        Student student);
+
+    List<Student> findByFirstNameAndLastName(
+        String firstName, String lastName);
 
     List<Student> findByEmail(
-            String email);
+        String email);
 
 }

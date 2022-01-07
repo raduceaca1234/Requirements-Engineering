@@ -10,11 +10,11 @@ import java.util.List;
 public interface InternshipMapper {
 
 
-    Internship internshipToInternshipDTO(InternshipDto internshipDto);
+    Internship internshipDTOToInternship(InternshipDto internshipDto);
 
-    InternshipDto internshipDTOToInternship(Internship internship);
+    InternshipDto internshipToInternshipDTO(Internship internship);
 
-    List<Internship> internshipsToInternshipsDTOs(List<InternshipDto> internshipDtos);
+    List<Internship> internshipsDTOsToInternships(List<InternshipDto> internshipDtos);
 
-    List<InternshipDto> internshipsDTOsToInternships(List<Internship> internships);
+    List<InternshipDto> internshipsToInternshipsDTOs(List<Internship> internships);
 }
