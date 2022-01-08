@@ -7,6 +7,7 @@ import com.example.RequirementsProject.repositories.StudentRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class StudentService {
@@ -25,10 +26,22 @@ public class StudentService {
         return studentMapper.studentToStudentDTO(studentRepository.save(student));
     }
 
-//    public StudentDto updateStudent(StudentDto studentDto) {
-//        Student student = studentMapper.studentDTOToStudent(studentDto);
-//        return studentMapper.studentToStudentDTO(studentRepository.update(student));
-//    }
+    public StudentDto updateStudent(StudentDto studentDto) {
+        Student student = studentMapper.studentDTOToStudent(studentDto);
+        Optional<Student> studentData = studentRepository.findById(student.getId());
+        if (studentData.isPresent()) {
+            Student _student = studentData.get();
+            _student.setFirstName(student.getFirstName());
+            _student.setLastName(student.getLastName());
+            _student.setBirthDate(student.getBirthDate());
+            _student.setEmail(student.getEmail());
+            _student.setListOfInternships(student.getListOfInternships());
+            _student.setResume(student.getResume());
+            return studentMapper.studentToStudentDTO(studentRepository.save(_student));
+        }
+
+        return studentDto;
+    }
 
     public List<StudentDto> findAll() {
         return studentMapper.studentsToStudentsDTOs(studentRepository.findAll());

@@ -22,7 +22,7 @@ public class StudentDto {
 
     private Set<StudentInternship> listOfInternships = new HashSet<>();
 
-    public UUID getId() {
+    public Long getId() {
         return id;
     }
 
