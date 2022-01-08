@@ -9,4 +9,20 @@ public class StudentInternshipKeyDto {
 
     @Column(name = "internship_id")
     Long internshipId;
+
+    public Long getStudentId() {
+        return studentId;
+    }
+
+    public void setStudentId(Long studentId) {
+        this.studentId = studentId;
+    }
+
+    public Long getInternshipId() {
+        return internshipId;
+    }
+
+    public void setInternshipId(Long internshipId) {
+        this.internshipId = internshipId;
+    }
 }

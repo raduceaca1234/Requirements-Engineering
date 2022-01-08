@@ -25,14 +25,18 @@ public class CompanyService {
         return companyMapper.companyToCompanyDTO(companyRepository.save(company));
     }
 
-    public CompanyDto updateCompany(CompanyDto companyDto) {
-        Company company = companyMapper.companyDTOToCompany(companyDto);
-        return companyMapper.companyToCompanyDTO(companyRepository.update(company));
-    }
+//    public CompanyDto updateCompany(CompanyDto companyDto) {
+//        Company company = companyMapper.companyDTOToCompany(companyDto);
+//        return companyMapper.companyToCompanyDTO(companyRepository.update(company));
+//    }
 
     public void deleteCompany(CompanyDto companyDto) {
         Company company = companyMapper.companyDTOToCompany(companyDto);
         companyRepository.delete(company);
+    }
+
+    public List<CompanyDto> findAll() {
+        return companyMapper.companiesToCompaniesDTOs(companyRepository.findAll());
     }
 
     public List<CompanyDto> findByTitle(String title) {

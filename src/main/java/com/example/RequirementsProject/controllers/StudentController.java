@@ -26,10 +26,16 @@ public class StudentController {
         return studentService.addStudent(studentDto);
     }
 
-    @PutMapping("/update")
-    public StudentDto updateInternship(@RequestBody StudentDto studentDto) {
-        logger.debug("REST request to update student : {}", studentDto);
-        return studentService.updateStudent(studentDto);
+//    @PutMapping("/update")
+//    public StudentDto updateInternship(@RequestBody StudentDto studentDto) {
+//        logger.debug("REST request to update student : {}", studentDto);
+//        return studentService.updateStudent(studentDto);
+//    }
+
+    @GetMapping("/all")
+    public List<StudentDto> findAll() {
+        logger.debug("REST request to find all students");
+        return studentService.findAll();
     }
 
     @DeleteMapping("/delete")

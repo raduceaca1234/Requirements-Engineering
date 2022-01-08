@@ -25,9 +25,13 @@ public class StudentService {
         return studentMapper.studentToStudentDTO(studentRepository.save(student));
     }
 
-    public StudentDto updateStudent(StudentDto studentDto) {
-        Student student = studentMapper.studentDTOToStudent(studentDto);
-        return studentMapper.studentToStudentDTO(studentRepository.update(student));
+//    public StudentDto updateStudent(StudentDto studentDto) {
+//        Student student = studentMapper.studentDTOToStudent(studentDto);
+//        return studentMapper.studentToStudentDTO(studentRepository.update(student));
+//    }
+
+    public List<StudentDto> findAll() {
+        return studentMapper.studentsToStudentsDTOs(studentRepository.findAll());
     }
 
     public void deleteStudent(StudentDto studentDto) {

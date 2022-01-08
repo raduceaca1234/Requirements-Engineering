@@ -25,9 +25,13 @@ public class InternshipService {
         return internshipMapper.internshipToInternshipDTO(internshipRepository.save(internship));
     }
 
-    public InternshipDto updateInternship(InternshipDto internshipDto) {
-        Internship internship = internshipMapper.internshipDTOToInternship(internshipDto);
-        return internshipMapper.internshipToInternshipDTO(internshipRepository.update(internship));
+//    public InternshipDto updateInternship(InternshipDto internshipDto) {
+//        Internship internship = internshipMapper.internshipDTOToInternship(internshipDto);
+//        return internshipMapper.internshipToInternshipDTO(internshipRepository.update(internship));
+//    }
+
+    public List<InternshipDto> findAll() {
+        return internshipMapper.internshipsToInternshipsDTOs(internshipRepository.findAll());
     }
 
     public void deleteInternship(InternshipDto internshipDto) {

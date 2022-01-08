@@ -4,7 +4,6 @@ import com.example.RequirementsProject.dto.CompanyDto;
 import com.example.RequirementsProject.services.CompanyService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -27,16 +26,22 @@ public class CompanyController {
         return companyService.addCompany(companyDto);
     }
 
-    @PutMapping("/update")
-    public CompanyDto updateCompany(@RequestBody CompanyDto companyDto) {
-        logger.debug("REST request to update company : {}", companyDto);
-        return companyService.updateCompany(companyDto);
-    }
+//    @PutMapping("/update")
+//    public CompanyDto updateCompany(@RequestBody CompanyDto companyDto) {
+//        logger.debug("REST request to update company : {}", companyDto);
+//        return companyService.updateCompany(companyDto);
+//    }
 
     @DeleteMapping("/delete")
     public void deleteCompany(@RequestBody CompanyDto companyDto) {
         logger.debug("REST request to delete company : {}", companyDto);
         companyService.deleteCompany(companyDto);
+    }
+
+    @GetMapping("/all")
+    public List<CompanyDto> findAll() {
+        logger.debug("REST request to find all companies");
+        return companyService.findAll();
     }
 
     @GetMapping("/{title}")
