@@ -13,17 +13,23 @@ import java.util.Set;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
+@Table(name = "students")
 public class Student {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
+    @Column(name = "firstName")
     private String firstName;
+
+    @Column(name = "lastName")
     private String lastName;
+
+    @Column(name = "birthDate")
     private Date birthDate;
 
-    @Column(unique = true)
+    @Column(name = "email", unique = true)
     private String email;
 
     @Embedded

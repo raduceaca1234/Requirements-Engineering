@@ -12,24 +12,32 @@ import java.util.Set;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
+@Table(name = "internships")
 public class Internship {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
+    @Column(name = "title")
     private String title;
 
+    @Column(name = "description")
     private String description;
 
+    @Column(name = "domain")
     private String domain;
 
+    @Column(name = "location")
     private String location;
 
+    @Column(name = "duration")
     private Long duration;
 
+    @Column(name = "salary")
     private Long salary;
 
+    @Column(name = "type")
     private String type;
 
     @OneToMany(mappedBy = "internship")
