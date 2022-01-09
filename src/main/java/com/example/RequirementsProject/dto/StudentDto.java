@@ -10,7 +10,7 @@ import java.util.UUID;
 
 public class StudentDto {
 
-    private UUID id;
+    private Long id;
 
     private String firstName;
     private String lastName;
@@ -26,7 +26,7 @@ public class StudentDto {
         return id;
     }
 
-    public void setId(UUID id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
