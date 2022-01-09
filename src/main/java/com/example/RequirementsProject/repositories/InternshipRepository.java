@@ -9,9 +9,6 @@ import java.util.List;
 @Repository
 public interface InternshipRepository extends JpaRepository<Internship, Long> {
 
-//    Internship update(
-//        Internship internship);
-
     List<Internship> findByTitle(
         String name);
 

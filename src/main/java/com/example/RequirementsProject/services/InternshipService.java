@@ -7,6 +7,7 @@ import com.example.RequirementsProject.repositories.InternshipRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class InternshipService {
@@ -25,10 +26,24 @@ public class InternshipService {
         return internshipMapper.internshipToInternshipDTO(internshipRepository.save(internship));
     }
 
-//    public InternshipDto updateInternship(InternshipDto internshipDto) {
-//        Internship internship = internshipMapper.internshipDTOToInternship(internshipDto);
-//        return internshipMapper.internshipToInternshipDTO(internshipRepository.update(internship));
-//    }
+    public InternshipDto updateInternship(InternshipDto internshipDto) {
+        Internship internship = internshipMapper.internshipDTOToInternship(internshipDto);
+        Optional<Internship> internshipData = internshipRepository.findById(internship.getId());
+        if (internshipData.isPresent()) {
+            Internship _internship = internshipData.get();
+            _internship.setType(internship.getType());
+            _internship.setTitle(internship.getTitle());
+            _internship.setSalary(internship.getSalary());
+            _internship.setLocation(internship.getLocation());
+            _internship.setDuration(internship.getDuration());
+            _internship.setDomain(internship.getDomain());
+            _internship.setDescription(internship.getDescription());
+            _internship.setAllStudents(internship.getAllStudents());
+            return internshipMapper.internshipToInternshipDTO(internshipRepository.save(_internship));
+        }
+
+        return new InternshipDto();
+    }
 
     public List<InternshipDto> findAll() {
         return internshipMapper.internshipsToInternshipsDTOs(internshipRepository.findAll());

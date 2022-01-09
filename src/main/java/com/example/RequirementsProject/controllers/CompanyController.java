@@ -26,11 +26,11 @@ public class CompanyController {
         return companyService.addCompany(companyDto);
     }
 
-//    @PutMapping("/update")
-//    public CompanyDto updateCompany(@RequestBody CompanyDto companyDto) {
-//        logger.debug("REST request to update company : {}", companyDto);
-//        return companyService.updateCompany(companyDto);
-//    }
+    @PutMapping("/update")
+    public CompanyDto updateCompany(@RequestBody CompanyDto companyDto) {
+        logger.debug("REST request to update company : {}", companyDto);
+        return companyService.updateCompany(companyDto);
+    }
 
     @DeleteMapping("/delete")
     public void deleteCompany(@RequestBody CompanyDto companyDto) {

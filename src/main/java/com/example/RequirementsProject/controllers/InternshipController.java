@@ -26,11 +26,11 @@ public class InternshipController {
         return internshipService.addInternship(internshipDto);
     }
 
-//    @PutMapping("/update")
-//    public InternshipDto updateInternship(@RequestBody InternshipDto internshipDto) {
-//        logger.debug("REST request to update internship : {}", internshipDto);
-//        return internshipService.updateInternship(internshipDto);
-//    }
+    @PutMapping("/update")
+    public InternshipDto updateInternship(@RequestBody InternshipDto internshipDto) {
+        logger.debug("REST request to update internship : {}", internshipDto);
+        return internshipService.updateInternship(internshipDto);
+    }
 
     @GetMapping("/all")
     public List<InternshipDto> findAll() {

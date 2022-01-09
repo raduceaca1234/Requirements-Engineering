@@ -40,7 +40,7 @@ public class StudentService {
             return studentMapper.studentToStudentDTO(studentRepository.save(_student));
         }
 
-        return studentDto;
+        return new StudentDto();
     }
 
     public List<StudentDto> findAll() {

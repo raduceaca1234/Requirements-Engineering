@@ -9,9 +9,6 @@ import java.util.List;
 @Repository
 public interface StudentRepository extends JpaRepository<Student, Long> {
 
-//    Student update(
-//        Student student);
-
     List<Student> findByFirstNameAndLastName(
         String firstName, String lastName);
 
