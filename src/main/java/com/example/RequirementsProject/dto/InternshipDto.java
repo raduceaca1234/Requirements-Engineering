@@ -4,11 +4,10 @@ import com.example.RequirementsProject.domain.StudentInternship;
 
 import java.util.HashSet;
 import java.util.Set;
-import java.util.UUID;
 
 public class InternshipDto {
 
-    private UUID id;
+    private Long id;
 
     private String title;
 
@@ -24,13 +23,15 @@ public class InternshipDto {
 
     private String type;
 
+    private Long companyId;
+
     private Set<StudentInternship> allStudents = new HashSet<>();
 
-    public UUID getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(UUID id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
@@ -88,6 +89,14 @@ public class InternshipDto {
 
     public void setType(String type) {
         this.type = type;
+    }
+
+    public Long getCompanyId() {
+        return companyId;
+    }
+
+    public void setCompanyId(Long companyId) {
+        this.companyId = companyId;
     }
 
     public Set<StudentInternship> getAllStudents() {

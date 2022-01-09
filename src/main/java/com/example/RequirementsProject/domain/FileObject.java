@@ -13,7 +13,7 @@ import javax.persistence.Embeddable;
 public class FileObject {
 
     private byte[] bytes;
-    private String name;
+    private String fileName;
     private String contentType;
 
     public byte[] getBytes() {
@@ -24,12 +24,12 @@ public class FileObject {
         this.bytes = bytes;
     }
 
-    public String getName() {
-        return name;
+    public String getFileName() {
+        return fileName;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setFileName(String fileName) {
+        this.fileName = fileName;
     }
 
     public String getContentType() {

@@ -40,6 +40,9 @@ public class Internship {
     @Column(name = "type")
     private String type;
 
+    @Column(name = "companyId")
+    private Long companyId;
+
     @OneToMany(mappedBy = "internship")
     private Set<StudentInternship> allStudents = new HashSet<>();
 
@@ -105,6 +108,14 @@ public class Internship {
 
     public void setType(String type) {
         this.type = type;
+    }
+
+    public Long getCompanyId() {
+        return companyId;
+    }
+
+    public void setCompanyId(Long companyId) {
+        this.companyId = companyId;
     }
 
     public Set<StudentInternship> getAllStudents() {

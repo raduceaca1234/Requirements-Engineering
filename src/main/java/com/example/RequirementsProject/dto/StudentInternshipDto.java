@@ -1,38 +1,34 @@
 package com.example.RequirementsProject.dto;
 
-import com.example.RequirementsProject.domain.Internship;
-import com.example.RequirementsProject.domain.Student;
-import com.example.RequirementsProject.domain.StudentInternshipKey;
-
 public class StudentInternshipDto {
 
-    StudentInternshipKey key;
+    StudentInternshipKeyDto key;
 
-    Student student;
+    StudentDto student;
 
-    Internship internship;
+    InternshipDto internship;
 
-    public StudentInternshipKey getKey() {
+    public StudentInternshipKeyDto getKey() {
         return key;
     }
 
-    public void setKey(StudentInternshipKey key) {
+    public void setKey(StudentInternshipKeyDto key) {
         this.key = key;
     }
 
-    public Student getStudent() {
+    public StudentDto getStudent() {
         return student;
     }
 
-    public void setStudent(Student student) {
+    public void setStudent(StudentDto student) {
         this.student = student;
     }
 
-    public Internship getInternship() {
+    public InternshipDto getInternship() {
         return internship;
     }
 
-    public void setInternship(Internship internship) {
+    public void setInternship(InternshipDto internship) {
         this.internship = internship;
     }
 }
